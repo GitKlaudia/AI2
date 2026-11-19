@@ -15,7 +15,7 @@ class Measurement
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $Temperature = null;
+    private ?float $Temperature = null;
 
     #[ORM\Column]
     private ?int $Humidity = null;
@@ -38,16 +38,23 @@ class Measurement
         return $this->id;
     }
 
-    public function getTemperature(): ?int
+    public function getTemperature(): ?float
     {
         return $this->Temperature;
     }
 
-    public function setTemperature(int $Temperature): static
+    public function setTemperature(float $Temperature): static
     {
         $this->Temperature = $Temperature;
 
         return $this;
+    }
+
+    public function getFahrenheit(): ?string
+    {
+        $fahrenheit = $this->getTemperature() * 9 / 5 + 32;
+
+        return "$fahrenheit";
     }
 
     public function getHumidity(): ?int
