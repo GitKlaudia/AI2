@@ -72,7 +72,6 @@ final class WeatherApiController extends AbstractController
 
                     'date' => $m->getDate()->format('Y-m-d'),
                     'celsius' => $m->getTemperature(),
-                    'fahrenheit' => $m->getFahrenheit(),
                     'precipitation' => $m->getPrecipitation(),
                     'wind' => $m->getWind(),
                     'humidity' => $m->getHumidity(),

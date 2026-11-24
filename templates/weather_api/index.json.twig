@@ -6,7 +6,6 @@
         {
             "date": "{{ measurement.date | date('Y-m-d') | raw }}",
             "celsius": "{{ measurement.temperature }}",
-            "fahrenheit": "{{ measurement.fahrenheit }}",
             "precipitation": "{{ measurement.precipitation }}",
             "wind": "{{ measurement.wind }}",
             "humidity": "{{ measurement.humidity }}"
@@ -14,3 +13,4 @@
         {% endfor %}
     ]
 }
+
